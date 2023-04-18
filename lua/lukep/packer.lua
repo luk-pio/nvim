@@ -66,7 +66,13 @@ return require('packer').startup(function(use)
         }
     })
     use {
-        "nvim-telescope/telescope-file-browser.nvim",
-        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+        "windwp/nvim-autopairs",
+    }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
     }
 end)
