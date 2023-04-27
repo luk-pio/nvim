@@ -47,3 +47,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Change directory to current file
 vim.keymap.set("n", "<leader>cd", "<cmd>cd %:p:h<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>=", "<C-w>10+")
+vim.keymap.set("n", "<leader>-", "<C-w>10-")

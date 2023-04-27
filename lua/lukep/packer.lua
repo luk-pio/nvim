@@ -65,8 +65,12 @@ return require('packer').startup(function(use)
       "nvim-telescope/telescope.nvim"
     }
   })
+
   use {
     "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup()
+    end
   }
 
   use {
