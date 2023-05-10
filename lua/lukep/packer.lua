@@ -82,4 +82,7 @@ return require('packer').startup(function(use)
   use {
     "gbprod/substitute.nvim"
   }
+  use {
+    "vim-autoformat/vim-autoformat"
+  }
 end)
