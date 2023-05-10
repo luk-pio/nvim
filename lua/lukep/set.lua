@@ -38,3 +38,7 @@ vim.cmd.colorscheme 'melange'
 
 -- Automatically refresh the buffer in case of changes
 vim.opt.autoread = true
+
+-- Python
+vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
+
