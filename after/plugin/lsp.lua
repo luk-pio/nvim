@@ -8,6 +8,7 @@ lsp.ensure_installed({
 	'tsserver',
 	'eslint',
 	'rust_analyzer',
+  'pyright'
 })
 
 -- (Optional) Configure lua language server for neovim
@@ -51,7 +52,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>ne", function() vim.diagnostic.goto_next() end, opts)
   vim.keymap.set("n", "<leader>pe", function() vim.diagnostic.goto_prev() end, opts)
   vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("i", "<leader>sh", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set("n", "<leader>sh", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp.setup()
