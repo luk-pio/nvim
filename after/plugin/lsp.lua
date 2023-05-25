@@ -8,7 +8,7 @@ lsp.ensure_installed({
 	"tsserver",
 	"eslint",
 	"rust_analyzer",
-	"pyright",
+	"pylsp",
 })
 
 -- (Optional) Configure lua language server for neovim
