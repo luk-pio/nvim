@@ -33,12 +33,11 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use("theprimeagen/harpoon")
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use("tpope/vim-surround")
 	use("tpope/vim-commentary")
-	use("savq/melange-nvim")
+	use("sainnhe/everforest")
 	use("nvim-tree/nvim-web-devicons")
 
 	use({

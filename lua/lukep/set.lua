@@ -34,7 +34,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'melange'
+vim.cmd.colorscheme 'everforest'
 
 -- Automatically refresh the buffer in case of changes
 vim.opt.autoread = true
