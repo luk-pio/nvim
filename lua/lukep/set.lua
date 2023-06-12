@@ -11,7 +11,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- Linewrap
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 -- Undo
 vim.opt.swapfile = false
@@ -30,15 +30,11 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
--- Colors
-vim.opt.colorcolumn = "80"
-
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'everforest'
+vim.cmd.colorscheme("everforest")
 
 -- Automatically refresh the buffer in case of changes
 vim.opt.autoread = true
 
 -- Python
-vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
-
+vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
