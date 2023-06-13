@@ -93,4 +93,11 @@ return require("packer").startup(function(use)
 	use({
 		"vim-autoformat/vim-autoformat",
 	})
+
+  -- install without yarn or npm
+use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+})
+
 end)
