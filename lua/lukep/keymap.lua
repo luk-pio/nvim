@@ -51,3 +51,9 @@ vim.keymap.set("n", "<leader>-", "<C-w>10-")
 
 -- Format
 vim.keymap.set("n", "<leader>fo", "<cmd>Autoformat<CR>")
+
+-- Open file in vscode
+vim.keymap.set("n", "<leader>vs", "<cmd>!code %<CR>", { silent = true })
+
+-- Open project directory in vscode
+vim.keymap.set("n", "<leader>vsp", "<cmd>!code .<CR>", { silent = true })
