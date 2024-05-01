@@ -1,0 +1,13 @@
+return {
+  'neovim/nvim-lspconfig',
+  event = { "BufReadPre", "BufNewFile" },
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    { "antosha417/nvim-lsp-file-operations", config = true },
+    { "folke/neodev.nvim",                   opts = {} },
+  },
+  config = function()
+    require('settings.lsp.keybindings')()
+    require('settings.lsp.languages')()
+  end
+}
