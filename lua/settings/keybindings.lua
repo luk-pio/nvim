@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>cd", "<cmd>cd %:p:h<CR>", { silent = true })
 
 -- Delete current files
-vim.keymap.set("n", "<leader>fD", "<cmd>call delete(expand('%')) <CR>")
+vim.keymap.set("n", "<leader>fD", "<cmd>call delete(expand('%')) | bdelete! <CR>")
 
 -- =============== EDIT ====================
 -- Don't copy overwritten word when pasting spc-p
@@ -47,7 +47,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- substitute
-local sub = require('substitute')
+local sub = require("substitute")
 vim.keymap.set("n", "s", sub.operator, { noremap = true })
 vim.keymap.set("n", "ss", sub.line, { noremap = true })
 vim.keymap.set("n", "S", sub.eol, { noremap = true })
@@ -59,10 +59,10 @@ vim.keymap.set("v", "<leader>rs", [[y:%s/<C-r>"//g<left><left>]])
 -- =============== WINDOWS ====================
 -- Resize windows
 -- Use alt + hjkl to resize windows
-vim.keymap.set('n', '<A-J>', ':resize -8<CR>')
-vim.keymap.set('n', '<A-K>', ':resize +8<CR>')
-vim.keymap.set('n', '<A-H>', ':vertical resize -8<CR>')
-vim.keymap.set('n', '<A-L>', ':vertical resize +8<CR>')
+vim.keymap.set("n", "<A-J>", ":resize -8<CR>")
+vim.keymap.set("n", "<A-K>", ":resize +8<CR>")
+vim.keymap.set("n", "<A-H>", ":vertical resize -8<CR>")
+vim.keymap.set("n", "<A-L>", ":vertical resize +8<CR>")
 
 -- Toggle line no
 vim.keymap.set("n", "<leader>ln", "<cmd>set number!<CR>")
