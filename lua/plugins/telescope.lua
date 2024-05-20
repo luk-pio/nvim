@@ -60,5 +60,7 @@ return {
 		vim.keymap.set("n", "<leader>hh", builtin.help_tags)
 		vim.keymap.set("n", "<leader>fp", builtin.buffers)
 		vim.keymap.set("n", "<leader>fa", builtin.live_grep)
+		vim.keymap.set("n", "<leader>p", builtin.registers)
+		vim.keymap.set("n", "<leader>jl", builtin.jumplist)
 	end,
 }
