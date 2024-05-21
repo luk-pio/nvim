@@ -6,6 +6,8 @@ vim.opt.termguicolors = true
 -- Highlight current cursor line
 vim.opt.cursorline = true
 
+vim.opt.cmdheight = 0
+
 -- Indents
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -29,7 +31,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- Use Mouse in vim
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Save default buffer to system clipboard
 vim.opt.clipboard:append("unnamedplus")
