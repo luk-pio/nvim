@@ -29,6 +29,13 @@ vim.keymap.set("n", "<leader>cd", "<cmd>cd %:p:h<CR>", { silent = true })
 vim.keymap.set("n", "<leader>fD", "<cmd>call delete(expand('%')) | bdelete! <CR>")
 
 -- =============== EDIT ====================
+-- Insert mode
+vim.keymap.set("i", "<C-k>", "<C-o>k")
+vim.keymap.set("i", "<C-h>", "<Left>")
+vim.keymap.set("i", "<C-l>", "<Right>")
+vim.keymap.set("i", "<C-j>", "<C-o>j")
+vim.keymap.set("i", "jk", "<Esc>")
+
 -- Don't copy overwritten word when pasting spc-p
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
