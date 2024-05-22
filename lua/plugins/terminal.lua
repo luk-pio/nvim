@@ -10,10 +10,10 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>tt", vim.cmd.ToggleTermToggleAll)
-		vim.keymap.set("n", "<leader>t1", function()
+		vim.keymap.set({ "n", "t" }, "<leader>t1", function()
 			vim.cmd("ToggleTerm")
 		end)
-		vim.keymap.set("n", "<leader>t2", function()
+		vim.keymap.set({ "n", "t" }, "<leader>t2", function()
 			vim.cmd("2ToggleTerm")
 		end)
 		vim.keymap.set("n", "<leader>t3", function()
