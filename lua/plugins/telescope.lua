@@ -25,6 +25,9 @@ return {
 					ignore_current_buffer = true,
 					sort_mru = true,
 				},
+				find_files = {
+					no_ignore = true,
+				},
 			},
 			extensions = {
 				file_browser = {
@@ -54,13 +57,13 @@ return {
 		local builtin = require("telescope.builtin")
 
 		vim.keymap.set("n", "<Leader>ff", builtin.find_files)
-		vim.keymap.set("n", "<leader>fr", builtin.oldfiles)
-		vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser <CR>")
+		vim.keymap.set("n", "<leader>fo", builtin.oldfiles)
+		vim.keymap.set("n", "<leader>fr", "<cmd>Telescope file_browser <CR>")
 		vim.keymap.set("n", "<leader>fh", "<cmd>Telescope file_browser path=%:p:h select_buffer=true <CR>")
 		vim.keymap.set("n", "<leader>hh", builtin.help_tags)
-		vim.keymap.set("n", "<leader>fp", builtin.buffers)
+		vim.keymap.set("n", "<leader>fb", builtin.buffers)
 		vim.keymap.set("n", "<leader>fa", builtin.live_grep)
-		vim.keymap.set("n", "<leader>p", builtin.registers)
+		vim.keymap.set("n", "<leader>fp", builtin.registers)
 		vim.keymap.set("n", "<leader>jl", builtin.jumplist)
 	end,
 }
