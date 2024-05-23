@@ -25,9 +25,6 @@ return {
 					ignore_current_buffer = true,
 					sort_mru = true,
 				},
-				find_files = {
-					no_ignore = true,
-				},
 			},
 			extensions = {
 				file_browser = {
@@ -57,6 +54,7 @@ return {
 		local builtin = require("telescope.builtin")
 
 		vim.keymap.set("n", "<Leader>ff", builtin.find_files)
+		vim.keymap.set("n", "<leader>fi", "<cmd>Telescope find_files no_ignore=true <CR>")
 		vim.keymap.set("n", "<leader>fo", builtin.oldfiles)
 		vim.keymap.set("n", "<leader>fr", "<cmd>Telescope file_browser <CR>")
 		vim.keymap.set("n", "<leader>fh", "<cmd>Telescope file_browser path=%:p:h select_buffer=true <CR>")
