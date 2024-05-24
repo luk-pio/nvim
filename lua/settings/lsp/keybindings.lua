@@ -2,7 +2,6 @@ return function()
 	-- Help
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 	vim.keymap.set("n", "<leader>gh", vim.lsp.buf.signature_help)
-	vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help)
 	vim.keymap.set("n", "gu", require("telescope.builtin").lsp_references)
 	vim.keymap.set("n", "gu", require("telescope.builtin").lsp_implementations)
 
