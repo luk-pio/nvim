@@ -9,6 +9,5 @@ return {
 	},
 	config = function()
 		require("settings.lsp.keybindings")()
-		require("settings.lsp.languages")()
 	end,
 }
