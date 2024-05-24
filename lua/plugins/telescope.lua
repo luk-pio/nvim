@@ -3,7 +3,7 @@ return {
 	tag = "0.1.6",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-telescope/telescope-file-browser.nvim",
+		-- "nvim-telescope/telescope-file-browser.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	config = function()
@@ -27,19 +27,19 @@ return {
 				},
 			},
 			extensions = {
-				file_browser = {
-					theme = "ivy",
-					hijack_netrw = true,
-					prompt_path = true,
-					hidden = true,
-					no_ignore = true,
-					mappings = {
-						i = {
-							["<C-j>"] = "move_selection_next",
-							["<C-k>"] = "move_selection_previous",
-						},
-					},
-				},
+				-- file_browser = {
+				-- 	theme = "ivy",
+				-- 	hijack_netrw = true,
+				-- 	prompt_path = true,
+				-- 	hidden = true,
+				-- 	no_ignore = true,
+				-- 	mappings = {
+				-- 		i = {
+				-- 			["<C-j>"] = "move_selection_next",
+				-- 			["<C-k>"] = "move_selection_previous",
+				-- 		},
+				-- 	},
+				-- },
 				fzf = {
 					fuzzy = true,
 					override_generic_sorter = true,
@@ -49,14 +49,14 @@ return {
 			},
 		})
 
-		telescope.load_extension("file_browser")
+		-- telescope.load_extension("file_browser")
 		telescope.load_extension("fzf")
 		local builtin = require("telescope.builtin")
 
 		vim.keymap.set("n", "<Leader>ff", builtin.find_files)
 		vim.keymap.set("n", "<leader>fi", "<cmd>Telescope find_files no_ignore=true <CR>")
 		vim.keymap.set("n", "<leader>fr", builtin.oldfiles)
-		vim.keymap.set("n", "<leader>fh", "<cmd>Telescope file_browser path=%:p:h select_buffer=true <CR>")
+		-- vim.keymap.set("n", "<leader>fh", "<cmd>Telescope file_browser path=%:p:h select_buffer=true <CR>")
 		vim.keymap.set("n", "<leader>hh", builtin.help_tags)
 		vim.keymap.set("n", "<leader>fb", builtin.buffers)
 		vim.keymap.set("n", "<leader>fa", builtin.live_grep)
