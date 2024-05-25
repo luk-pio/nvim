@@ -28,6 +28,11 @@ vim.keymap.set("n", "<leader>cd", "<cmd>cd %:p:h<CR>", { silent = true })
 -- Delete current files
 vim.keymap.set("n", "<leader>fD", "<cmd>call delete(expand('%')) | bdelete! <CR>")
 
+-- Vim diagnostic
+vim.keymap.set("n", "<leader>se", "<cmd>Telescope diagnostics bufnr=0<CR>")
+vim.keymap.set("n", "<leader>pe", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<leader>ne", vim.diagnostic.goto_next)
+
 -- =============== EDIT ====================
 -- Insert mode
 vim.keymap.set("i", "<C-k>", "<C-o>k")
