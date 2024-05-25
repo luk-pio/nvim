@@ -53,13 +53,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- substitute
-local sub = require("substitute")
-vim.keymap.set("n", "s", sub.operator, { noremap = true })
-vim.keymap.set("n", "ss", sub.line, { noremap = true })
-vim.keymap.set("n", "S", sub.eol, { noremap = true })
-vim.keymap.set("x", "s", sub.visual, { noremap = true })
-
 -- Replace current selection in whole file
 vim.keymap.set("v", "<leader>rs", [[y:%s/<C-r>"//g<left><left>]])
 
