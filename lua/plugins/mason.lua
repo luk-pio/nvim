@@ -29,16 +29,15 @@ return {
 			function(server_name)
 				require("lspconfig")[server_name].setup({})
 			end,
-			-- Next, you can provide a dedicated handler for specific servers.
-			-- For example, a handler override for the `rust_analyzer`:
+			-- Use typescript-tools with tsserver
 			["tsserver"] = function()
 				require("typescript-tools").setup({})
-				vim.keymap.set("n", "<leader>ti", "<cmd>TSToolsOrganizeImports<CR>")
-				vim.keymap.set("n", "<leader>tu", "<cmd>TSToolsRemoveUnused<CR>")
-				vim.keymap.set("n", "<leader>tm", "<cmd>TSToolsAddMissingImports<CR>")
-				vim.keymap.set("n", "<leader>ta", "<cmd>TSToolsFixAll<CR>")
-				vim.keymap.set("n", "<leader>tr", "<cmd>TSToolsRenameFile<CR>")
-				vim.keymap.set("n", "<leader>tf", "<cmd>TSToolsFileReferences<CR>")
+				vim.keymap.set("n", "<leader>ri", "<cmd>TSToolsOrganizeImports<CR>")
+				vim.keymap.set("n", "<leader>ru", "<cmd>TSToolsRemoveUnused<CR>")
+				vim.keymap.set("n", "<leader>rm", "<cmd>TSToolsAddMissingImports<CR>")
+				vim.keymap.set("n", "<leader>ra", "<cmd>TSToolsFixAll<CR>")
+				vim.keymap.set("n", "<leader>rr", "<cmd>TSToolsRenameFile<CR>")
+				vim.keymap.set("n", "<leader>rf", "<cmd>TSToolsFileReferences<CR>")
 			end,
 		})
 
