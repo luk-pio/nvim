@@ -51,6 +51,8 @@ return {
 		vim.keymap.set("n", "<leader>fb", builtin.buffers)
 		vim.keymap.set("n", "<leader>fa", builtin.live_grep)
 		vim.keymap.set("n", "<leader>fp", builtin.registers)
-		vim.keymap.set("n", "<leader>jl", builtin.jumplist)
+		vim.keymap.set("n", "<leader>fj", builtin.jumplist)
+		vim.keymap.set("n", "<leader>fk", builtin.keymaps)
+		vim.keymap.set("n", "<leader>fc", builtin.commands)
 	end,
 }
