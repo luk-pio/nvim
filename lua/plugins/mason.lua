@@ -14,6 +14,8 @@ return {
 		local mason = require("mason")
 		mason.setup({})
 
+		local lspconfig = require("lspconfig")
+
 		local mason_lspconfig = require("mason-lspconfig")
 		mason_lspconfig.setup({
 			ensure_installed = {
@@ -27,7 +29,7 @@ return {
 		})
 		mason_lspconfig.setup_handlers({
 			function(server_name)
-				require("lspconfig")[server_name].setup({})
+				lspconfig[server_name].setup({})
 			end,
 			-- Use typescript-tools with tsserver
 			["tsserver"] = function()
@@ -38,6 +40,54 @@ return {
 				vim.keymap.set("n", "<leader>ra", "<cmd>TSToolsFixAll<CR>")
 				vim.keymap.set("n", "<leader>rr", "<cmd>TSToolsRenameFile<CR>")
 				vim.keymap.set("n", "<leader>rf", "<cmd>TSToolsFileReferences<CR>")
+			end,
+			["jsonls"] = function()
+				lspconfig.jsonls.setup({
+					json = {
+						schemas = {
+							{
+								fileMatch = { "package.json" },
+								url = "https://json.schemastore.org/package.json",
+							},
+							{
+								fileMatch = { "tsconfig*.json" },
+								url = "https://json.schemastore.org/tsconfig.json",
+							},
+							{
+								fileMatch = {
+									".prettierrc",
+									".prettierrc.json",
+									"prettier.config.json",
+								},
+								url = "https://json.schemastore.org/prettierrc.json",
+							},
+							{
+								fileMatch = { ".eslintrc", ".eslintrc.json" },
+								url = "https://json.schemastore.org/eslintrc.json",
+							},
+							{
+								fileMatch = { ".babelrc", ".babelrc.json", "babel.config.json" },
+								url = "https://json.schemastore.org/babelrc.json",
+							},
+							{
+								fileMatch = { "lerna.json" },
+								url = "https://json.schemastore.org/lerna.json",
+							},
+							{
+								fileMatch = { "now.json", "vercel.json" },
+								url = "https://json.schemastore.org/now.json",
+							},
+							{
+								fileMatch = {
+									".stylelintrc",
+									".stylelintrc.json",
+									"stylelint.config.json",
+								},
+								url = "http://json.schemastore.org/stylelintrc.json",
+							},
+						},
+					},
+				})
 			end,
 		})
 
