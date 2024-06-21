@@ -12,7 +12,7 @@
         local scat = require"scat"
         scat.setup{
             cr = {
-                -- template_path = vim.fn.expandcmd"$HOME/<path_to_your_cr_template>",
+                template_path = vim.fn.expandcmd"$HOME/.config/zsh/cr-description.md",
                 user = "lpiotrak" -- default user to be used when no user_id is provided to featch_active_crs
             }
         }

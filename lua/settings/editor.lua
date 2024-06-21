@@ -33,9 +33,6 @@ vim.opt.updatetime = 50
 -- Use Mouse in vim
 vim.opt.mouse = "a"
 
--- Save default buffer to system clipboard
-vim.opt.clipboard:append("unnamedplus")
-
 -- Automatically refresh the buffer in case of changes
 vim.opt.autoread = true
 

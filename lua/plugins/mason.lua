@@ -5,10 +5,10 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"neovim/nvim-lspconfig",
-		{
-			"pmizio/typescript-tools.nvim",
-			dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig", "dmmulroy/ts-error-translator.nvim" },
-		},
+		-- {
+		-- 	"pmizio/typescript-tools.nvim",
+		-- 	dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig", "dmmulroy/ts-error-translator.nvim" },
+		-- },
 	},
 	config = function()
 		local mason = require("mason")
@@ -32,15 +32,15 @@ return {
 				lspconfig[server_name].setup({})
 			end,
 			-- Use typescript-tools with tsserver
-			["tsserver"] = function()
-				require("typescript-tools").setup({})
-				vim.keymap.set("n", "<leader>ri", "<cmd>TSToolsOrganizeImports<CR>")
-				vim.keymap.set("n", "<leader>ru", "<cmd>TSToolsRemoveUnused<CR>")
-				vim.keymap.set("n", "<leader>rm", "<cmd>TSToolsAddMissingImports<CR>")
-				vim.keymap.set("n", "<leader>ra", "<cmd>TSToolsFixAll<CR>")
-				vim.keymap.set("n", "<leader>rr", "<cmd>TSToolsRenameFile<CR>")
-				vim.keymap.set("n", "<leader>rf", "<cmd>TSToolsFileReferences<CR>")
-			end,
+			-- ["tsserver"] = function()
+			-- 	require("typescript-tools").setup({})
+			-- 	vim.keymap.set("n", "<leader>ri", "<cmd>TSToolsOrganizeImports<CR>")
+			-- 	vim.keymap.set("n", "<leader>ru", "<cmd>TSToolsRemoveUnused<CR>")
+			-- 	vim.keymap.set("n", "<leader>rm", "<cmd>TSToolsAddMissingImports<CR>")
+			-- 	vim.keymap.set("n", "<leader>ra", "<cmd>TSToolsFixAll<CR>")
+			-- 	vim.keymap.set("n", "<leader>rr", "<cmd>TSToolsRenameFile<CR>")
+			-- 	vim.keymap.set("n", "<leader>rf", "<cmd>TSToolsFileReferences<CR>")
+			-- end,
 			["jsonls"] = function()
 				lspconfig.jsonls.setup({
 					json = {
