@@ -1,8 +1,7 @@
 return {
   "epwalsh/obsidian.nvim",
   version = "*",
-  lazy = true,
-  keys = "<leader>of",
+  event = "VeryLazy",
   ft = "markdown",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -39,5 +38,6 @@ return {
     vim.keymap.set("n", '<leader>of', '<cmd>ObsidianQuickSwitch<CR>')
     vim.keymap.set("n", '<leader>od', '<cmd>ObsidianToday<CR>')
     vim.keymap.set("n", '<leader>ot', '<cmd>ObsidianTemplate<CR>')
+    vim.keymap.set("n", '<leader>ol', '<cmd>ObsidianTemplate Log Point.md<CR>')
   end
 }
