@@ -25,10 +25,10 @@
         map_key("n", "<leader>aij", brazil.install_current_jdt_package, { desc = "Install Current JDT Package" })
         map_key("n", "<leader>ar", cr.open_cr, { desc = "Open CR" })
         -- or map_key("n", "<leader>ar", function() cr.open_cr({ cr_template = vim.fn.expandcmd"$HOME/<path_to_your_cr_template>" }) end, { desc = "Open CR" })
-        map_key("n", "<leader>arp", cr.fetch_active_crs, { desc = "Fetch Active CRs" })
+        -- map_key("n", "<leader>arp", cr.fetch_active_crs, { desc = "Fetch Active CRs" })
         -- the below mapping prompts for user id you would like to view instead of picking from config
-        map_key("n", "<leader>arpp", function() cr.fetch_active_crs({ force_pick = true }) end, { desc = "Fetch Active CRs (ignore user specified in config)" })
-        -- or map_key("n", "<leader>arp", function() cr.fetch_active_crs({user = "<your_user_name>"}) end)
+        -- map_key("n", "<leader>arpp", function() cr.fetch_active_crs({ force_pick = true }) end, { desc = "Fetch Active CRs (ignore user specified in config)" })
+        map_key("n", "<leader>arp", function() cr.fetch_active_crs({user = "mogarm"}) end)
         map_key("n", "<leader>aru", cr.update_existing_cr, { desc = "Update Existing CR" })
         map_key("n", "<leader>art", local_manager.toggle_cr_overview, { desc = "Toggle CR Overview" })
         map_key("n", "<leader>ac", brazil_utils.run_checkstyle, { desc = "Run Brazil Checkstyle" })
