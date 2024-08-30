@@ -10,7 +10,7 @@ return {
 		local term_map = require("terminal.mappings")
 
 		vim.keymap.set({ "n", "x" }, "<leader>ts", term_map.operator_send, { expr = true })
-		vim.keymap.set({ "n", "t" }, "<C-t>", term_map.toggle)
+		vim.keymap.set({ "n", "t" }, "<C-x>", term_map.toggle)
 		vim.keymap.set("n", "<leader>tT", term_map.toggle({ open_cmd = "enew" }))
 		vim.keymap.set("n", "<leader>to", term_map.run(""))
 		vim.keymap.set("n", "<leader>tR", term_map.run(nil, { layout = { open_cmd = "enew" } }))

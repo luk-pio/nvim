@@ -3,7 +3,6 @@ return function()
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 	vim.keymap.set("n", "<leader>gh", vim.lsp.buf.signature_help)
 	vim.keymap.set("n", "gu", require("telescope.builtin").lsp_references)
-	vim.keymap.set("n", "gu", require("telescope.builtin").lsp_implementations)
 
 	vim.keymap.set("n", "<leader>vw", vim.lsp.buf.workspace_symbol)
 	vim.keymap.set("n", "<leader>re", vim.lsp.buf.rename)
