@@ -54,5 +54,6 @@ return {
 		vim.keymap.set("n", "<leader>fj", builtin.jumplist)
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps)
 		vim.keymap.set("n", "<leader>fc", builtin.commands)
+		vim.keymap.set("n", "<leader>fm", builtin.man_pages)
 	end,
 }
