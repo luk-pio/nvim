@@ -5,6 +5,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"neovim/nvim-lspconfig",
+    "hrsh7th/cmp-nvim-lsp",
 		{
 			"pmizio/typescript-tools.nvim",
 			dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig", "dmmulroy/ts-error-translator.nvim" },
@@ -13,9 +14,7 @@ return {
 	config = function()
 		local mason = require("mason")
 		mason.setup({})
-
 		local lspconfig = require("lspconfig")
-
 		local mason_lspconfig = require("mason-lspconfig")
 		mason_lspconfig.setup({
 			ensure_installed = {
@@ -26,6 +25,7 @@ return {
 				"bashls",
 				"graphql",
 				"omnisharp",
+        "clangd"
 			},
 		})
 		mason_lspconfig.setup_handlers({
@@ -99,6 +99,11 @@ return {
 					root_dir = function()
 						return vim.loop.cwd() -- current working directory
 					end,
+				})
+			end,
+			["clangd"] = function()
+				lspconfig.clangd.setup({
+          capabilities = require('cmp_nvim_lsp').default_capabilities()
 				})
 			end,
 		})
