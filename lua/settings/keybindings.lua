@@ -1,5 +1,6 @@
 -- =============== GENERAL ====================
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 vim.keymap.set("n", "<leader>so", "<cmd>source %<CR>", { desc = "Read source file" })
 
 -- =============== NAV ====================
