@@ -5,7 +5,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"neovim/nvim-lspconfig",
-    "hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-nvim-lsp",
 		{
 			"pmizio/typescript-tools.nvim",
 			dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig", "dmmulroy/ts-error-translator.nvim" },
@@ -25,7 +25,8 @@ return {
 				"bashls",
 				"graphql",
 				"omnisharp",
-        "clangd"
+				"clangd",
+        "pyright"
 			},
 		})
 		mason_lspconfig.setup_handlers({
@@ -92,7 +93,7 @@ return {
 			end,
 			["omnisharp"] = function()
 				lspconfig.omnisharp.setup({
-					cmd = { vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp" },
+					cmd = { "/Users/lpiotrak/.local/share/nvim/mason/bin/omnisharp" },
 					enable_import_completion = true,
 					organize_imports_on_format = true,
 					enable_roslyn_analyzers = true,
@@ -103,7 +104,7 @@ return {
 			end,
 			["clangd"] = function()
 				lspconfig.clangd.setup({
-          capabilities = require('cmp_nvim_lsp').default_capabilities()
+					capabilities = require("cmp_nvim_lsp").default_capabilities(),
 				})
 			end,
 		})

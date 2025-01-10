@@ -1,3 +1,4 @@
+-- TODO: managing multiple terminal windows
 return {
 	"rebelot/terminal.nvim",
 	config = function()
