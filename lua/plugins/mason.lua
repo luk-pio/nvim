@@ -19,22 +19,21 @@ return {
 		mason_lspconfig.setup({
 			ensure_installed = {
 				"lua_ls",
-				"tsserver",
+				"ts_ls",
 				"graphql",
 				"jsonls",
 				"bashls",
 				"graphql",
 				"omnisharp",
 				"clangd",
-        "pyright"
+				"pyright",
 			},
 		})
 		mason_lspconfig.setup_handlers({
 			function(server_name)
 				lspconfig[server_name].setup({})
 			end,
-			-- Use typescript-tools with tsserver
-			["tsserver"] = function()
+			["ts_ls"] = function()
 				require("typescript-tools").setup({})
 				vim.keymap.set("n", "<leader>ri", "<cmd>TSToolsOrganizeImports<CR>")
 				vim.keymap.set("n", "<leader>ru", "<cmd>TSToolsRemoveUnused<CR>")
