@@ -8,9 +8,9 @@ return {
         timer = 500,
       },
     })
-    vim.keymap.set("n", "gr", sub.operator, { noremap = true })
-    vim.keymap.set("n", "grr", sub.line, { noremap = true })
-    vim.keymap.set("n", "gR", sub.eol, { noremap = true })
-    vim.keymap.set("x", "gr", sub.visual, { noremap = true })
+    vim.keymap.set("n", "gr", sub.operator, { noremap = true, desc = "Substitute operator" })
+    vim.keymap.set("n", "grr", sub.line, { noremap = true, desc = "Substitute line" })
+    vim.keymap.set("n", "gR", sub.eol, { noremap = true, desc = "Substitute to end of line" })
+    vim.keymap.set("x", "gr", sub.visual, { noremap = true, desc = "Substitute selection" })
   end,
 }
