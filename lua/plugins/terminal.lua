@@ -10,14 +10,14 @@ return {
 		require("terminal").current_term_index()
 		local term_map = require("terminal.mappings")
 
-		vim.keymap.set({ "n", "x" }, "<leader>ts", term_map.operator_send, { expr = true })
-		vim.keymap.set({ "n", "t" }, "<C-x>", term_map.toggle)
-		vim.keymap.set("n", "<leader>tT", term_map.toggle({ open_cmd = "enew" }))
-		vim.keymap.set("n", "<leader>to", term_map.run(""))
-		vim.keymap.set("n", "<leader>tR", term_map.run(nil, { layout = { open_cmd = "enew" } }))
-		vim.keymap.set("n", "<leader>tk", term_map.kill)
-		vim.keymap.set("n", "<leader>t]", term_map.cycle_next)
-		vim.keymap.set("n", "<leader>t[", term_map.cycle_prev)
+		vim.keymap.set({ "n", "x" }, "<leader>ts", term_map.operator_send, { expr = true, desc = "Send to terminal (operator)" })
+		vim.keymap.set({ "n", "t" }, "<C-x>", term_map.toggle, { desc = "Toggle terminal" })
+		vim.keymap.set("n", "<leader>tT", term_map.toggle({ open_cmd = "enew" }), { desc = "Toggle terminal in new buffer" })
+		vim.keymap.set("n", "<leader>to", term_map.run(""), { desc = "Open terminal" })
+		vim.keymap.set("n", "<leader>tR", term_map.run(nil, { layout = { open_cmd = "enew" } }), { desc = "Run terminal in new buffer" })
+		vim.keymap.set("n", "<leader>tk", term_map.kill, { desc = "Kill terminal" })
+		vim.keymap.set("n", "<leader>t]", term_map.cycle_next, { desc = "Cycle to next terminal" })
+		vim.keymap.set("n", "<leader>t[", term_map.cycle_prev, { desc = "Cycle to previous terminal" })
 		vim.keymap.set(
 			"n",
 			"<leader>tl",
@@ -32,8 +32,8 @@ return {
 		)
 		vim.keymap.set("n", "<leader>tf", term_map.move({ open_cmd = "float" }), { desc = "Move term to float" })
 		-- Normal mode with C-n
-		vim.keymap.set("t", "<C-n>", [[<c-\><c-n>]])
-		vim.keymap.set({ "n", "t", "i" }, "\\ff", [[<cmd>Telescope find_files<CR>]])
+		vim.keymap.set("t", "<C-n>", [[<c-\><c-n>]], { desc = "Enter normal mode" })
+		vim.keymap.set({ "n", "t", "i" }, "\\ff", [[<cmd>Telescope find_files<CR>]], { desc = "Find files (works in terminal)" })
 
 		vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "TermOpen" }, {
 			callback = function(args)

@@ -35,12 +35,12 @@ return {
 			end,
 			["ts_ls"] = function()
 				require("typescript-tools").setup({})
-				vim.keymap.set("n", "<leader>ri", "<cmd>TSToolsOrganizeImports<CR>")
-				vim.keymap.set("n", "<leader>ru", "<cmd>TSToolsRemoveUnused<CR>")
-				vim.keymap.set("n", "<leader>rm", "<cmd>TSToolsAddMissingImports<CR>")
-				vim.keymap.set("n", "<leader>ra", "<cmd>TSToolsFixAll<CR>")
-				vim.keymap.set("n", "<leader>rr", "<cmd>TSToolsRenameFile<CR>")
-				vim.keymap.set("n", "<leader>rf", "<cmd>TSToolsFileReferences<CR>")
+				vim.keymap.set("n", "<leader>ri", "<cmd>TSToolsOrganizeImports<CR>", { desc = "Organize imports" })
+				vim.keymap.set("n", "<leader>ru", "<cmd>TSToolsRemoveUnused<CR>", { desc = "Remove unused imports" })
+				vim.keymap.set("n", "<leader>rm", "<cmd>TSToolsAddMissingImports<CR>", { desc = "Add missing imports" })
+				vim.keymap.set("n", "<leader>ra", "<cmd>TSToolsFixAll<CR>", { desc = "Fix all issues" })
+				vim.keymap.set("n", "<leader>rr", "<cmd>TSToolsRenameFile<CR>", { desc = "Rename file" })
+				vim.keymap.set("n", "<leader>rf", "<cmd>TSToolsFileReferences<CR>", { desc = "File references" })
 			end,
 			["jsonls"] = function()
 				lspconfig.jsonls.setup({
