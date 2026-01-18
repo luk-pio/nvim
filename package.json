@@ -1,0 +1,19 @@
+{
+  "name": "nvim",
+  "version": "1.0.0",
+  "description": "A modern, feature-rich Neovim configuration optimized for web development with powerful LSP integration, fuzzy finding, and git workflows.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:18174/git/luk-pio/nvim"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/notion-mcp-server": "^2.0.0"
+  }
+}
